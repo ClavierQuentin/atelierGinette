@@ -1,0 +1,162 @@
+/*Installation des 2 polices spéciales*/
+@font-face {
+    font-family: 'Angella';
+    src: url('../fonts/angella-white-font/AngellaWhitePersonalUseFont-ywA8e.otf');
+}
+@font-face {
+    font-family: 'Garet';
+    src: url("../fonts/garet.book.otf"),
+        url("../fonts/garet.book.ttf");
+}
+/*Margin 0 sur tous les éléments*/
+*{
+    margin: 0;
+}
+body{
+    position: relative;
+    font-family: 'Garet';
+    background-color: #f8cbc6;
+}
+h2, h3, h4, h5{
+    font-family: 'Playfair Display', serif;
+    font-weight: lighter;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+h4{
+    font-size: 20px;
+    font-weight: normal; 
+}
+.marginRight10{
+    margin-right: 10px;
+}
+.backGroundFleur{
+    background-color: white;
+    background-image: url("../img/banniere.png");
+    background-repeat: no-repeat;
+}
+    /*----------------------------Barre de navigation-----------------*/
+    nav{
+        display: none;
+        height: 90vh;
+        transition: 1s;
+        position: relative;
+        flex-direction: column;
+    }
+    nav p{
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: fadeIn 1s;
+        font-weight: bold;
+    }
+    nav a{
+        padding: 15px;
+    }
+    nav a:hover{
+        transform: scale(1.1);
+    }
+    @keyframes fadeIn{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+/*Titre*/
+.conteneurName{
+    z-index: 2000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.name{
+    color: white;
+    font-family: 'Angella';
+    font-size: 80px;
+}
+    /*-------------------------Bloc menu--------------------*/
+    .divMenu{
+        position: absolute;
+        top: 30px;
+        left: 100px;
+        z-index: 2001;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .menu{
+        position: relative;
+        width: 27px;
+        height: 4px;
+        border-radius: 5px;
+        background-color: white;
+        transition: 0.2s ease-in-out;
+    }
+    .menu::before, .menu::after{
+        position: absolute;
+        content: '';
+        width: 27px;
+        height: 4px;
+        border-radius: 5px;
+        background-color: white;
+        transition: 0.5s ease-in-out;
+    }
+    .menu::after{
+        transform: translateY(10px);
+    }
+    .menu::before{
+        transform: translateY(-10px);
+    }
+    .divMenu.ouverture .menu{
+        background: transparent;
+    }
+    .divMenu.ouverture .menu::after{
+        top: 0;
+        transform: rotateZ(45deg);
+    }
+    .divMenu.ouverture .menu::before{
+        bottom: 0;
+        transform: rotateZ(-45deg);
+    }
+/*-----------------------Footer------------------*/
+footer{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;    
+    padding: 15px 20px;
+}
+.banniereReseaux{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding-top: 30px;
+    color: white;
+}
+.banniereCGV{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+/*---------------------------Responsive---------------------*/
+@media screen  and (max-width:400px) {
+    .name{
+        font-size:40px;
+    }
+    .divMenu{
+        top: 5px;
+        left: 5px;
+    }
+    footer{
+        flex-direction: column;
+        align-items: center;
+    }
+}
