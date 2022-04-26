@@ -1,18 +1,18 @@
 let photosCarrousel = [
         {
-            photo : "../img/trousse-maquillage-artisanat-atelier-ginette-4.jpg",
+            photo : "./img/trousse-maquillage-artisanat-atelier-ginette-4.jpg",
             id : 1
         },
         {
-            photo : "../img/pochette-savon-solide-atelier-ginette-81.jpg",
+            photo : "./img/pochette-savon-solide-atelier-ginette-81.jpg",
             id : 2
         },
         {
-            photo : "../img/trousse-maquillage-artisanat-atelier-ginette-1.jpg",
+            photo : "./img/trousse-maquillage-artisanat-atelier-ginette-1.jpg",
             id : 3
         },
         {
-            photo : "../img/DSCF0059.jpg",
+            photo : "./img/DSCF0059.jpg",
             id : 4
         }
     ];

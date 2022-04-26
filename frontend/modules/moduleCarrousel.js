@@ -1,6 +1,7 @@
 //On importe les données de data.js
 import {photosCarrousel} from "../data.js";
 
+const fonctionCarrousel =  () => {
 //On récupère l'élément carrousel dans html
 let carrousel = document.getElementById('carrousel');
 //On déclare une variable à 1
@@ -49,3 +50,5 @@ function slide(){
 }
 //setInterval nous permet de lancer slide toutes les 6s
 setInterval(slide,6000);
+};
+export {fonctionCarrousel}

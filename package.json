@@ -1,0 +1,22 @@
+{
+  "name": "atelierginette",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClavierQuentin/atelierGinette.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClavierQuentin/atelierGinette/issues"
+  },
+  "homepage": "https://github.com/ClavierQuentin/atelierGinette#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
