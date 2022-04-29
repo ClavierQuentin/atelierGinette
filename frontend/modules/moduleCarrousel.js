@@ -12,10 +12,10 @@ let tailleCarrousel = photosCarrousel.length;
 
 //On récupère la largeur de l'écran de l'utilisateur
 let largeurEcran = screen.width;
-
 //Création d'une fonction de génération du carrousel selon la taille du array
 function generate(){
     for(let i = 0; i < tailleCarrousel; i++){
+
         //On crée un élément img
         let photo = document.createElement('img');
         //On y modifie l'id et src selon le array

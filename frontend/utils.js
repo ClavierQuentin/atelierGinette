@@ -3,6 +3,7 @@ export const parseRequestUrl = () => {
     const request = url.split("/");
     return{
         page: request[1],
-        destination: request[2]
+        destination: request[2],
+        id: request[3]
     } ;
 }

@@ -1,5 +1,6 @@
 const accueil = {
-    render: () =>{
+    render:  () =>{
+
         return `  
     <header>
         <div class="conteneurNew">
@@ -30,7 +31,9 @@ const accueil = {
             <!--CATEGORIE-->
             <a href="#">
                 <div>
-                    <img class="imgCategorie" src="./img/trousse-maquillage-artisanat-atelier-ginette-4.jpg" alt="">
+                    <div class="divImg">
+                        <img class="imgCategorie" src="./img/trousse-maquillage-artisanat-atelier-ginette-4.jpg" alt="">
+                    </div
                     <label for="">Les trousses</label>
                 </div>
             </a>
@@ -38,7 +41,9 @@ const accueil = {
             <!--CATEGORIE-->
             <a href="">
                 <div>
-                    <img class="imgCategorie" src="./img/DSCF9440.jpg" alt="">
+                    <div class="divImg">
+                        <img class="imgCategorie" src="./img/DSCF9440.jpg" alt="">
+                    </div>
                     <label for="">Les sacs</label>
                 </div>
             </a>
@@ -46,7 +51,9 @@ const accueil = {
             <!--CATEGORIE-->
             <a href="">
                 <div>
-                    <img class="imgCategorie" src="./img/cotons-lavables-bambou-atelier-ginette-1.jpg" alt="">
+                    <div class="divImg">
+                        <img class="imgCategorie" src="./img/cotons-lavables-bambou-atelier-ginette-1.jpg" alt="">
+                    </div>
                     <label for="">Les cotons</label>
                 </div>
             </a>
@@ -54,8 +61,10 @@ const accueil = {
             <!--CATEGORIE-->
             <a href="">
                 <div>
-                    <img class="imgCategorie" src="./img/DSCF0477.jpg" alt="">
-                    <label for="">Les pochettes à savon</label>
+                <div class="divImg">
+                        <img class="imgCategorie" src="./img/DSCF0477.jpg" alt="">
+                </div>
+                <label for="">Les pochettes à savon</label>
                 </div>
             </a>
             <!---->

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    <script type="module" src="../modules/moduleCarrouPrez.js"></script>  <!--MODULE SCRIPT POUR CARROUSEL-->
+    <script type="module" src="../pages/categorie.js"></script>
     <title>Atelier Ginette</title>
 </head>
 <body>
@@ -34,87 +34,59 @@
     </nav>
     <!--------------------------------------CONTENEUR PRINCIPAL---------------------------------->
     <main id="main-conteneur">
-        <!-----------------BANNIERE QUI JE SUIS--------------------->
-        <div class="banniere quiJeSuis backGroundFleur">
-            <div class="divTexte">
-                <!--TITRE-->
-                <h3>Qui je suis</h3>
-                <!--TEXTE-->
-                <p>
-                    L’Atelier Ginette est né au printemps (comme moi) de l’année 2021. Après avoir été initiée par ma maman à la couture, sur la vieille Singer de ma grand-mère, j’ai découvert une vraie passion et depuis j’ai le pied sur la pédale tous les jours. Il m’est apparu comme une évidence que mon atelier porte le prénom de ma grand-mère, en hommage à sa transmission. 
-                </p>
-                <p> 
-                    En quête de sens, j’ai voulu développer une activité professionnelle qui m’offre un espace de créativité et de connexion à moi-même, un métier passion qui me donne la possibilité de travailler à mon rythme et de produire de manière raisonnée des articles uniques.
-                </p>
+        <div class="sectionProduits backGroundFleur">
+            <div class="titreProduits">
+                <h3>Tous les produits :</h3>
             </div>
-            <!--IMAGE-->
-            <div class="portrait">
-                <img src="../img/prez/Atelier ginette artisanat couture fait main.jpg" alt="">
-            </div>
-        </div>
-        <!---------------------------------BANNIERE LIEU-------------------------------->
-        <div class="lieu banniere">
-            <!--CARROUSEL-->
-            <div class="conteneurCarrousel" id="conteneurCarrousel">
-                <div id="carrousel" class="carrousel">
-                </div>
-            </div>
-            <!--TEXTE-->
-            <div class="divTexte">
-                <h3>Le lieu</h3>
-                <p>
-                    A la recherche d’authenticité, d’une vie plus calme, au rythme lent des saisons, d’un vrai retour à la simplicité, j’ai vécu sur les routes et mon aventure m’a mené dans une vieille maison au cœur du Bocage Normand, plantée dans un espace préservé et sauvage. 
-                </p>
-                <p>
-                    C’est là que l’Atelier Ginette prend place, au creux d’une nature splendide et authentique. 
-                </p>
-            </div>
-        </div>
-        <!------------------------------------BANNIERE VALEURS----------------------------------->
-        <div class="backGroundFleur">
-            <div>
-                <!--TITRE-->
-                <h2 class="titreValeurs" >Nos valeurs</h2>
-                <div class="banniere " style="padding-top: 20px;">
-                    <div class="divTexte">
-                        <!--TITRE-->
-                        <h3>Local et fait main</h3>
-                        <!--TEXTE-->
-                        <p>
-                            Les créations sont toutes fabriquées à la main avec beaucoup d’amour et de bienveillance. 
-                        </p>
-                        <p>
-                            Chaque accessoire est le fruit de plusieurs heures de travail consciencieux et attentionné, c’est ce qui rend chaque pièce unique et importante.
-                        </p>
-                        <p>
-                            A l’Atelier Ginette, je cherche l’authenticité, la rareté : les séries sont en quantité limitée. Les étiquettes sont tamponnées à la main et même les petites fleurs séchées que vous trouvez dans vos colis ont poussé dans mon jardin. 
-                        </p>
+            <div id="cardsProduits" class="cardsProduits">
+                <!--<div class="card">
+                    <div class="conteneurImgCard">
+                        <img class="imgCardProduit" src="../img/DSCF0018.jpg" alt="">
                     </div>
-                    <!--IMAGE-->
-                    <div class="portrait">
-                        <img src="../img/prez/atelier-ginette-artisanat-couture.jpg" alt="">
+                    <label>Coussinets de lavande</label>
+                </div>
+                <div class="card">
+                    <div class="conteneurImgCard">
+                        <img class="imgCardProduit" src="../img/DSCF0018.jpg" alt="">
                     </div>
+                    <label>Coussinets de lavande</label>
                 </div>
-            </div>
-            <div class="banniere wrapReverse" style="padding-bottom: 80px;">
-                <!--IMAGE-->
-                <div class="portrait">
-                    <img src="../img/prez/DSCF9966.JPG" alt="">
+                <div class="card">
+                    <div class="conteneurImgCard">
+                        <img class="imgCardProduit" src="../img/DSCF0018.jpg" alt="">
+                    </div>
+                    <label>Coussinets de lavande</label>
                 </div>
-                <div class="divTexte">
-                    <!--TITRE-->
-                    <h3>Une démarche éco-responsable</h3>
-                    <!--TEXTE-->
-                    <p>
-                        Pour créer les pièces de l’Atelier je m’inspire de la nature et de sa poésie. Je choisi des motifs fleuris et colorés qui apportent du pep’s et de la beauté aux accessoires de notre quotidien. J’apprécie les tissus aux tonalités anciennes, vintages.
-                    </p>
-                    <p>
-                        C’est aussi parce que je suis très attachée à mon environnement et à la préservation de sa beauté que je me suis engagée à diriger l’Atelier vers une démarche plus responsable. 
-                    </p>
-                    <p>
-                        J’utilise désormais principalement des matières naturelles et des tissus certifiés bio, labélisés OEKO-TEX®, GOTS ou upcyclés. J’évite le suremballage des commandes et je favorise, autant que possible, les matières compostables (ficelle de jute, papier kraft) et la récupération d’emballage déjà utilisés. J’essaie de valoriser au maximum toutes mes chutes de tissu en proposant des petits produits qui permettent de les réutiliser, (tels que les guirlandes de croissants ou les sachets de lavande.) 
-                    </p>
+                <div class="card">
+                    <div class="conteneurImgCard">
+                        <img class="imgCardProduit" src="../img/DSCF0018.jpg" alt="">
+                    </div>
+                    <label>Coussinets de lavande</label>
                 </div>
+                <div class="card">
+                    <div class="conteneurImgCard">
+                        <img class="imgCardProduit" src="../img/DSCF0018.jpg" alt="">
+                    </div>
+                    <label>Coussinets de lavande</label>
+                </div>
+                <div class="card">
+                    <div class="conteneurImgCard">
+                        <img class="imgCardProduit" src="../img/DSCF0018.jpg" alt="">
+                    </div>
+                    <label>Coussinets de lavande</label>
+                </div>
+                <div class="card">
+                    <div class="conteneurImgCard">
+                        <img class="imgCardProduit" src="../img/DSCF0018.jpg" alt="">
+                    </div>
+                    <label>Coussinets de lavande</label>
+                </div>
+                <div class="card">
+                    <div class="conteneurImgCard">
+                        <img class="imgCardProduit" src="../img/DSCF0018.jpg" alt="">
+                    </div>
+                    <label>Coussinets de lavande</label>
+                </div>-->
             </div>
         </div>
     </main>

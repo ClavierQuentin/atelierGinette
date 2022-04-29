@@ -3,48 +3,56 @@ import {fonctionCarrouselPrez} from "./modules/moduleCarrouPrez.js";
 import accueil from "./pages/accueil.js";
 import about from "./pages/about.js";
 import {parseRequestUrl} from './utils.js'
-import error404 from "./pages/error404.js";
+//import error404 from "./pages/error404.js";
+import categories from "./pages/categorie.js";
+import produits from "./pages/produits.js";
 
 const conteneurName = document.getElementById('conteneurName');
 const nav = document.querySelector('nav');
 
 let request = parseRequestUrl();
 
-function isAccueil(param){
-    if(!param){
+function isAccueil(param, param2){
+    if(param != 'pages' || param2 != 'about' &&  param2 != 'categories'){
         conteneurName.style.position = "absolute";
-        fonctionCarrousel();
+       fonctionCarrousel();
     }
-    else{
+    else if(param2 == 'about'){
         conteneurName.style.position = "relative";
-        fonctionCarrouselPrez();
-        nav.style.height = '75vh';
-        
+        fonctionCarrouselPrez();        
     } 
 }
 
 const routes = {
     '/': accueil,
     '/pages': accueil,
-    '/pages/about': about
+    '/pages/about': about,
+    '/pages/categories': categories,
+    '/pages/categories/id': produits
 }
-const router = () =>{
-     request = parseRequestUrl();
+const router = async () =>{
+    request = parseRequestUrl();
     const parseUrl = 
     (request.page ? `/${request.page}` : '/') + 
-    (request.destination ? `/about` : '');
-    const screen = routes[parseUrl]? routes[parseUrl] : error404;
+    (request.destination ? `/${request.destination}` : '') +
+    (request.id ? '/id' : '');
+    const screen = routes[parseUrl]? routes[parseUrl] : accueil;
     const main = document.getElementById('main-conteneur');
-    main.innerHTML = screen.render();
+    if(!request.page || request.destination == 'about'){
+        main.innerHTML = screen.render();
+    }
+    else{
+        main.innerHTML = await screen.render();
+    }   
+    
 }
 
 window.addEventListener('load', () =>{
     router();
-   isAccueil(request.destination);    
+   isAccueil(request.page, request.destination);    
 })
 window.addEventListener('hashchange', () =>{
-
     router();
     location.reload();
-    isAccueil(request.destination);     
+    isAccueil(request.page, request.destination);     
 });

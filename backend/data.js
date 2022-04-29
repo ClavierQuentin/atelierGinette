@@ -1,4 +1,5 @@
-let photosCarrousel = [
+module.exports ={
+ photosCarrousel : [
         {
             photo : "./img/trousse-maquillage-artisanat-atelier-ginette-4.jpg",
             id : 1
@@ -15,8 +16,8 @@ let photosCarrousel = [
             photo : "./img/DSCF0059.jpg",
             id : 4
         }
-    ];
-let photosPrez =  [
+    ],
+ photosPrez :  [
         {
             photo: "../img/prez/atelier-ginette-créations-couture-artisanat.jpg",
             id: 1
@@ -37,9 +38,9 @@ let photosPrez =  [
             photo: "../img/prez/DSCF7904.jpg",
             id: 5
         }
-    ];
+    ],
 
-let listeCategories = [
+ listeCategories : [
     {
         id: 1,
         categorie : "Coussinets de lavande",
@@ -156,9 +157,9 @@ let listeCategories = [
         categorie : "Totes bags",
         urlImageCategorie : "../img/DSCF9443.jpg"
     }
-]
+],
 
-let listeProduits = [
+ listeProduits : [
     {
         idCategorie : 3,
         nom: "Trousse de toilette berlingot matelassée",
@@ -194,4 +195,4 @@ let listeProduits = [
         prix: 25
     }
 ]
-export {photosCarrousel, photosPrez, listeCategories, listeProduits}
+}

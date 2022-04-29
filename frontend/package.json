@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
-  "scripts": { 
+  "scripts": {
     "start": "live-server --verbose",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "live-server": "^1.2.1"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "mysql": "^2.18.1"
   }
 }
