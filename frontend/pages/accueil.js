@@ -62,7 +62,7 @@ const accueil = {
             <a href="">
                 <div>
                 <div class="divImg">
-                        <img class="imgCategorie" src="./img/DSCF0477.jpg" alt="">
+                        <img class="imgCategorie" src="./img/pochetteSavon/DSCF0477.jpg" alt="">
                 </div>
                 <label for="">Les pochettes à savon</label>
                 </div>

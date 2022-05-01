@@ -4,7 +4,7 @@ let photosCarrousel = [
             id : 1
         },
         {
-            photo : "./img/pochette-savon-solide-atelier-ginette-81.jpg",
+            photo : "./img/pochetteSavon/pochette-savon-solide-atelier-ginette-81.jpg",
             id : 2
         },
         {

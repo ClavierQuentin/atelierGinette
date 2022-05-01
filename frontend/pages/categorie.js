@@ -68,7 +68,7 @@ const categories = {
                             <label>${listeCategories.nom_categorie}</label>
                         </a>
                     `
-                ).join('\n')};
+                ).join('\n')}
             </div>
         </div>
          `       
