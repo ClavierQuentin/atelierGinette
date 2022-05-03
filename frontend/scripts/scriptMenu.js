@@ -1,3 +1,4 @@
+
 const parseRequestUrl = () => {
     const url = document.location.hash.toLowerCase();
     const request = url.split("/");
@@ -70,3 +71,61 @@ divMenu.addEventListener('click', () => {
         isOuvert = false;
     }
 })
+
+let blocPanier = document.getElementById('blocPanier')
+let panier = document.getElementById('panier')
+let panierClique = false
+blocPanier.addEventListener('click', () => {
+    //document.location.hash = '/pages/panier'
+    if(!panierClique){
+        panier.classList.add('affichagePanier')
+        panierClique = true;
+    
+    }
+    else{
+        panier.classList.remove('affichagePanier')
+        panierClique = false
+    }
+})
+
+let divPanier = document.getElementById('emptyBasket');
+let panierItems =JSON.parse(localStorage.getItem('panierItems'));
+console.log(panierItems);
+function genererPanier(){
+    if(panierItems){
+        for(let y= 0; y< panierItems.length; y++){
+            let divProduit = document.createElement('div');
+            divProduit.classList.add('divProduit')
+            divPanier.appendChild(divProduit)
+
+            let img = document.createElement('img');
+            img.src = panierItems[y].image;
+            img.classList.add('imgProduitPanierDefilant')
+            divProduit.appendChild(img)
+
+            let divDescription = document.createElement('div');
+            divDescription.classList.add('divDescription')
+            divProduit.appendChild(divDescription)
+
+            let para = document.createElement('p');
+            para.textContent = panierItems[y].nom;
+            divDescription.appendChild(para)
+            
+            let prix = document.createElement('p')
+            prix.textContent = panierItems[y].prix + "€" ;
+            divDescription.appendChild(prix)
+            
+            let quantite = document.createElement('p')
+            quantite.textContent = "Qté :" + panierItems[y].qte
+            divDescription.appendChild(quantite)
+        }
+        let button = document.createElement("a");
+        button.textContent = "Acceder au panier"
+        button.href = "#/pages/panier"
+        divPanier.appendChild(button)
+    }
+    else{
+        divPanier.textContent = "Votre panier est vide"
+    }
+}
+genererPanier()

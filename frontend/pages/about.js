@@ -1,11 +1,17 @@
 const about = {
-    render: () => {
+    render:  async () => {
+        const response = await fetch("http://localhost:5000/pages/about",{
+            headers:{
+                "Content-Type":"application/json",
+            }
+        });
+        const listeImages = await response.json();
         return `
         <!-----------------BANNIERE QUI JE SUIS--------------------->
         <div class="banniere quiJeSuis backGroundFleur">
             <div class="divTexte">
                 <!--TITRE-->
-                <h3>Qui je suis</h3>
+                <h2>Qui je suis</h2>
                 <!--TEXTE-->
                 <p>
                     L’Atelier Ginette est né au printemps (comme moi) de l’année 2021. Après avoir été initiée par ma maman à la couture, sur la vieille Singer de ma grand-mère, j’ai découvert une vraie passion et depuis j’ai le pied sur la pédale tous les jours. Il m’est apparu comme une évidence que mon atelier porte le prénom de ma grand-mère, en hommage à sa transmission. 
@@ -16,7 +22,7 @@ const about = {
             </div>
             <!--IMAGE-->
             <div class="portrait">
-                <img src="./img/prez/Atelier ginette artisanat couture fait main.jpg" alt="">
+                <img src="${listeImages[0].url_image}" alt="">
             </div>
         </div>
         <!---------------------------------BANNIERE LIEU-------------------------------->
@@ -28,7 +34,7 @@ const about = {
             </div>
             <!--TEXTE-->
             <div class="divTexte">
-                <h3>Le lieu</h3>
+                <h2>Le lieu</h2>
                 <p>
                     A la recherche d’authenticité, d’une vie plus calme, au rythme lent des saisons, d’un vrai retour à la simplicité, j’ai vécu sur les routes et mon aventure m’a mené dans une vieille maison au cœur du Bocage Normand, plantée dans un espace préservé et sauvage. 
                 </p>
@@ -42,10 +48,10 @@ const about = {
             <div>
                 <!--TITRE-->
                 <h2 class="titreValeurs" >Nos valeurs</h2>
-                <div class="banniere " style="padding-top: 20px;">
+                <div class="banniere " style="padding-top: 20px; padding-bottom: 10%">
                     <div class="divTexte">
                         <!--TITRE-->
-                        <h3>Local et fait main</h3>
+                        <h2>Local et fait main</h2>
                         <!--TEXTE-->
                         <p>
                             Les créations sont toutes fabriquées à la main avec beaucoup d’amour et de bienveillance. 
@@ -58,19 +64,19 @@ const about = {
                         </p>
                     </div>
                     <!--IMAGE-->
-                    <div class="portrait">
-                        <img src="./img/prez/atelier-ginette-artisanat-couture.jpg" alt="">
+                    <div>
+                        <img class="paysage" src="${listeImages[1].url_image}" alt="">
                     </div>
                 </div>
             </div>
             <div class="banniere wrapReverse" style="padding-bottom: 80px;">
                 <!--IMAGE-->
                 <div class="portrait">
-                    <img src="./img/prez/DSCF9966.JPG" alt="">
+                    <img src="${listeImages[7].url_image}" alt="">
                 </div>
                 <div class="divTexte">
                     <!--TITRE-->
-                    <h3>Une démarche éco-responsable</h3>
+                    <h2>Une démarche éco-responsable</h2>
                     <!--TEXTE-->
                     <p>
                         Pour créer les pièces de l’Atelier je m’inspire de la nature et de sa poésie. Je choisi des motifs fleuris et colorés qui apportent du pep’s et de la beauté aux accessoires de notre quotidien. J’apprécie les tissus aux tonalités anciennes, vintages.

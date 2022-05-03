@@ -1,21 +1,29 @@
 //J'importe les données de data.js
-import {photosPrez} from "../data.js";
+//import {photosPrez} from "../data.js";
 
-const fonctionCarrouselPrez = () => {
+const fonctionCarrouselPrez = async () => {
+
+    const response = await fetch("http://localhost:5000/pages/about",{
+        headers:{
+            "Content-Type":"application/json",
+        }
+    });
+    
+    const listeImages = await response.json();
+    let  listeImagesCarrou = [listeImages[8], listeImages[7], listeImages[4], listeImages[6]];
 //On récupère l'élément HTML
 let carrouselPrez = document.getElementById('carrouselPrez');
 
 //On initialise une variable avec la longueur du array
-let tailleCarrouselPrez = photosPrez.length;
 //On initialise une largeur du carrousel de 400px
-let largeurCarrouselPrez = 400;
+let largeurCarrouselPrez = 333;
 
 //Fonction de génération des images
 function generate(){
 //Pour la taille du tableau, on implémente le src et la classe aux images
-    for(let i = 0; i < tailleCarrouselPrez; i++){
+    for(let i = 0; i < listeImagesCarrou.length; i++){
         let photoPrez = document.createElement('img');
-        photoPrez.src = photosPrez[i].photo;
+        photoPrez.src = listeImagesCarrou[i].url_image;
         photoPrez.classList.add('tailleImg');
         carrouselPrez.appendChild(photoPrez);
     }
@@ -27,7 +35,7 @@ let compteurPrez = 1;
 //Fonction pour le slide du carrousel
 function slide(){
     //Si on arrive sur la dernière image
-    if(compteurPrez == tailleCarrouselPrez){
+    if(compteurPrez == listeImagesCarrou.length){
         //On met le compteur à 0
         compteurPrez = 0;
     }

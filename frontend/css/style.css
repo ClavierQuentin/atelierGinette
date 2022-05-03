@@ -34,8 +34,6 @@ h4{
 }
 .backGroundFleur{
     background-color: white;
-    background-image: url("../img/banniere.png");
-    background-repeat: no-repeat;
 }
     /*----------------------------Barre de navigation-----------------*/
     nav{
@@ -70,6 +68,49 @@ h4{
             opacity: 1;
         }
     }
+.panier{
+    position: absolute;
+    top: 0;
+    left: -500px;
+    z-index: 6000;
+    width: 500px;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
+}
+
+.divPanier{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin: 10px 0;
+    gap: 2%;
+}
+.divProduit{
+    display: flex;
+    gap: 2%;
+    justify-content: space-around;
+    margin: 5px 0;
+}
+.divDescription{
+    text-align: center;
+    width: 50%;
+}
+.blocPanier{
+    position: absolute;
+    top: 30px;
+    left: 1300px;
+    z-index: 2003;
+    cursor: pointer;
+    color: white;
+}
+.affichagePanier{
+transform: translateX(500px);
+}
 /*Titre*/
 .conteneurName{
     z-index: 2000;
@@ -170,7 +211,7 @@ footer a{
 
 
 .divTexte{
-    width: 50%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -178,6 +219,7 @@ footer a{
 .divTexte p{
     margin: 10px;
     width: 80%;
+    text-align: justify;
 }
 .banniere{
     display: flex;
@@ -186,7 +228,12 @@ footer a{
     flex-wrap: wrap;
 }
 .portrait img{
-    height: 450px;
+    height: 500px;
+    width: auto;
+}
+.paysage{
+    width: 400px;
+    height: auto;
 }
     /*--------------------Banniere qui je suis-----------------*/
     .quiJeSuis{
@@ -198,8 +245,8 @@ footer a{
     padding: 80px 0;
 }
 .conteneurCarrousel{
-    height: 450px;
-    width: 400px;
+    height: 500px;
+    width: 333px;
     overflow: hidden;
 }
 .carrousel{
@@ -211,7 +258,7 @@ footer a{
 .tailleImg{
     min-width: 100%;
     min-height: 100%;
-    object-fit: cover;
+   /* object-fit: cover;*/
 }
     /*----------------------------Bannière valeurs-------------------*/
     .titreValeurs{
@@ -279,6 +326,9 @@ header{
 .conteneurNew button:hover{
     transform: scale(1.06);
 }
+.conteneurNew a{
+    color: white;
+}
 .tailleImg{
     object-fit: cover;
 }
@@ -294,8 +344,8 @@ header{
     height: 95vh;*/
 }
     /*-------------Banniere présentation-----------*/
-    .prez h4{
-        padding-left: 2%;
+    .prez h2{
+        margin-left: 5%;
         padding-top: 2%;
         color: white;
     }
@@ -311,9 +361,10 @@ header{
         color: white;
     }
 /*----------Banniere catégories---------*/
-.decouvrir h4{
-    margin-left: 10%;
+.decouvrir h2{
+    margin-left: 5%;
     padding-top: 5%;
+    padding-bottom: 2%;
 }
 .categories{
     height: 60vh;
@@ -345,7 +396,7 @@ header{
     object-fit: cover;
 }
 .imgCategorie:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: 2s;
 }
     /*-----------------Bannière picto----------------*/
@@ -502,7 +553,11 @@ header{
     cursor: pointer;
     font-size: 20px;
     color: white;
-
+}
+.description1 button:hover{
+    color: #f8cbc6;
+    background-color: white;
+    border: 1px solid #f8cbc6;
 }
 hr{
     width:30%;
@@ -537,4 +592,34 @@ hr{
 flex-direction: column;
 align-items: center;
 gap: 35px;
+}
+
+.basket{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    padding: 5%;
+}
+.imgProduitPanier{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.imgProduitPanierDefilant{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.produitPanier{
+    display: flex;
+    gap: 2%;
+    border-top: 2px #f8cbc6 solid;
+
+}
+.pagePanier div{
+    margin: 2%;
+}
+.sousTotal button{
+    margin: 4%;
 }

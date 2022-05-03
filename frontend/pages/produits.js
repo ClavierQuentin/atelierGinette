@@ -14,8 +14,7 @@ const produits = {
             }
         })
         if(!response || !response.ok){
-            return console.log(response);
-             `<div>Erreur dans la lecture de la BDD</div>`
+            return  `<div>Erreur dans la lecture de la BDD</div>`
         }
         const produits = await response.json();
   

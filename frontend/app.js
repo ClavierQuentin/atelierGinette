@@ -7,6 +7,7 @@ import {parseRequestUrl} from './utils.js'
 import categories from "./pages/categorie.js";
 import produits from "./pages/produits.js";
 import produit from "./pages/produit.js";
+import panier from "./pages/panier.js";
 
 const conteneurName = document.getElementById('conteneurName');
 const nav = document.querySelector('nav');
@@ -30,7 +31,9 @@ const routes = {
     '/pages/about': about,
     '/pages/categories': categories,
     '/pages/categories/id': produits,
-    '/pages/produit/id': produit
+    '/pages/produit/id': produit,
+    '/pages/panier':panier,
+    '/pages/panier/id':panier
 }
 const router = async () =>{
     request = parseRequestUrl();
@@ -40,13 +43,15 @@ const router = async () =>{
     (request.id ? `/id` : '');
     const screen = routes[parseUrl]? routes[parseUrl] : accueil;
     const main = document.getElementById('main-conteneur');
-    if(!request.destination || request.destination == 'about'){
-        main.innerHTML = screen.render();
-    }
-    else{
+   // if(!request.destination || request.destination == 'about'){
+       // main.innerHTML = screen.render();
+    //}
+    //else{
         main.innerHTML = await screen.render();
-    }   
-    
+        if (screen.after_render){
+            await screen.after_render()
+        };
+    //}   
 }
 
 window.addEventListener('load', () =>{
@@ -56,5 +61,6 @@ window.addEventListener('load', () =>{
 window.addEventListener('hashchange', () =>{
     router();
     location.reload();
-    isAccueil(request.page, request.destination);     
+    document.documentElement.scrollTop = 0;
+        isAccueil(request.page, request.destination);     
 });

@@ -1,7 +1,28 @@
+import { getPanierItems, setPanierItems } from '../localStorage.js';
 import {parseRequestUrl} from '../utils.js';
 let request = parseRequestUrl();
 
+let ajouterAuPanier = (item, forceUpdate = false) => {
+    let panierItems = getPanierItems();
+    const itemExiste = panierItems.find(x => x.produit === item.produit);
+    if(itemExiste){
+        if(forceUpdate){
+           panierItems = panierItems.map((x) => x.product === itemExiste.produit ? item : x); 
+        }
+    }
+    else{
+        panierItems = [...panierItems, item]
+    }
+    setPanierItems(panierItems)
+}
+
 const produit = {
+    after_render: () => {
+        const request = parseRequestUrl();
+        document.getElementById('boutonAjouter').addEventListener('click', () => {
+            document.location.hash = `/pages/panier/${request.id}`
+        })
+    },
     render: async () => {
         const response = await fetch(`http://localhost:5000/pages/produit/${request.id}`,{
             headers:{
@@ -12,7 +33,7 @@ const produit = {
             return `<div>Erreur dans la lecture de la BDD</div>`
         }
         const produit = await response.json()
-
+        
         return `
         <div class="backGroundFleur">
             <div class="sectionPhoto">
@@ -27,7 +48,7 @@ const produit = {
                     <div class="descriptionCourte">
                             ${produit[0].description_courte} 
                     </div>
-                    <button>Ajouter au panier</button>
+                    <div><button id="boutonAjouter">Ajouter au panier</button></div>
                 </div>
             </div>
             <hr>

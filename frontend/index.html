@@ -10,9 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <script type="module" src="app.js"></script>
+
     <title>Atelier Ginette</title>
 </head>
 <body>
+    <div id="panier" class="panier">
+        <h3>Panier</h3>
+        <hr>
+        <div id="emptyBasket" class="divPanier"></div>
+        
+    </div>
     <!-------------------------------------------------TITRE ET MENU----------------------------------------->
     <!--BLOC TITRE-->
     <div id="conteneurName" class="conteneurName">
@@ -23,6 +30,9 @@
         <div class="menu" id="menu">
         </div>
     </div> 
+    <div id="blocPanier" class="blocPanier">
+        <img width="40px" src="./img/icons8-shopping-trolley-64.png" alt="">
+    </div>
     <!----------------------------------------------PAGE DE NAVIGATION------------------------------------------------------------------>
     <nav>
             <p>
@@ -53,5 +63,6 @@
     </footer>
     <!--PROGRAMME POUR LE MENU-->
     <script src="./scripts/scriptMenu.js" defer></script>
+
 </body>
 </html>
