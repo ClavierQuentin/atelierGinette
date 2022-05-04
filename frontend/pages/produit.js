@@ -17,10 +17,24 @@ let ajouterAuPanier = (item, forceUpdate = false) => {
 }
 
 const produit = {
-    after_render: () => {
+    after_render: async () => {
         const request = parseRequestUrl();
+        const response = await fetch(`http://localhost:5000/pages/produit/${request.id}`,{
+            headers:{
+                "Content-Type":"application/json",
+            }
+        })
+        const produit = await response.json()
         document.getElementById('boutonAjouter').addEventListener('click', () => {
-            document.location.hash = `/pages/panier/${request.id}`
+            ajouterAuPanier({
+                "produit": produit[0].id_produit,
+                "nom": produit[0].nom_produit,
+                "image": produit[0].url_image,
+                "prix": produit[0].prix_produit,  
+                "stock": produit[0].stock_produit,
+                "qte":1
+            })
+            location.reload()
         })
     },
     render: async () => {

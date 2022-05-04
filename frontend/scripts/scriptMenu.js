@@ -90,9 +90,8 @@ blocPanier.addEventListener('click', () => {
 
 let divPanier = document.getElementById('emptyBasket');
 let panierItems =JSON.parse(localStorage.getItem('panierItems'));
-console.log(panierItems);
 function genererPanier(){
-    if(panierItems){
+    if(panierItems.length > 0){
         for(let y= 0; y< panierItems.length; y++){
             let divProduit = document.createElement('div');
             divProduit.classList.add('divProduit')
@@ -119,13 +118,13 @@ function genererPanier(){
             quantite.textContent = "Qté :" + panierItems[y].qte
             divDescription.appendChild(quantite)
         }
-        let button = document.createElement("a");
+        /*let button = document.createElement("button");
         button.textContent = "Acceder au panier"
-        button.href = "#/pages/panier"
-        divPanier.appendChild(button)
+        button.onclick = "document.location.hash = '/pages/panier'"
+        divPanier.appendChild(button)*/
     }
     else{
-        divPanier.textContent = "Votre panier est vide"
+        divPanier.innerHTML = "Votre panier est vide"
     }
 }
-genererPanier()
+genererPanier();

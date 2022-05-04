@@ -124,7 +124,7 @@ const panier = {
            </div>
            <div class="sousTotal">
                     <h3>Sous-Total (${panierItems.reduce((a,c) => a + c.qte, 0)} produit(s)) : ${panierItems.reduce((a,c) => a+c.prix*c.qte, 0)}€</h3>
-                    <button class="boutonCheckout" id="boutonCheckout">Procéder au paiement</button>
+                    <a href="#/pages/paiement"><button class="boutonCheckout" id="boutonCheckout">Procéder au paiement</button></a>
            </div>
         </div>
     `

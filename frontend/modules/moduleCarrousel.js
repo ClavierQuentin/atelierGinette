@@ -11,9 +11,7 @@ const fonctionCarrousel = async () => {
     });
     
     const listeCategories = await response.json();
-    console.log(listeCategories);
-
-
+    
 //On récupère l'élément carrousel dans html
 let carrousel = document.getElementById('carrousel');
 //On déclare une variable à 1

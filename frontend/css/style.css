@@ -69,20 +69,28 @@ h4{
         }
     }
 .panier{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -500px;
     z-index: 6000;
     width: 500px;
-    height: 100vh;
+    max-width: 80vw;
+    /*height: 100vh;*/
     background-color: rgba(255, 255, 255, 0.9);
     transition: 1s;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2%;
+    padding: 20px 0;
 }
-
+.panier button{
+    border: 0;
+    background-color: #f8cbc6;
+    padding: 2%;
+    color: white;
+    cursor: pointer;
+}
 .divPanier{
     display: flex;
     flex-wrap: nowrap;
@@ -110,6 +118,21 @@ h4{
 }
 .affichagePanier{
 transform: translateX(500px);
+}
+@media screen and (min-width:600px) and (max-width:1000px) {
+    .blocPanier{
+        left: 80%;
+    }
+}
+@media screen and (max-width:600px) {
+    .blocPanier{
+        left: 80%;
+        top: 10px;
+    }
+    .blocPanier img{
+        width: 25px;
+    }
+
 }
 /*Titre*/
 .conteneurName{
@@ -279,11 +302,21 @@ footer a{
     .portrait img{
         display: none;
     }
+    .paysage{
+        display: none;
+    }
     .conteneurCarrousel{
         display: none;
     }
 }
-
+@media screen  and (min-width:600px) and (max-width:900px){
+    .divTexte p{
+        width: 90%;
+    }
+    .divTexte{
+        width: 100%;
+    }
+}
 
 /*--------------Barre de navigation----------*/
 nav{
@@ -532,6 +565,7 @@ header{
     text-align: center;
     margin: 35PX;
 }
+
 .description1 h3{
     margin:  35px;
 }
@@ -543,6 +577,14 @@ header{
 .descriptionCourte{
     margin: 35px;
     text-align: justify;
+}
+@media screen and (max-width:500px) {
+    .description1{
+        width: 100%;
+    }
+    .descriptionCourte{
+        margin: 0;
+    }
 }
 .description1 button{
     margin: 35px;
