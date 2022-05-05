@@ -1,6 +1,9 @@
+import data from "../data.js";
+import { fonctionCarrousel } from "../modules/moduleCarrousel.js";
+
 const accueil = {
-    render:  async () => {
-        const response = await fetch("http://localhost:5000/api/produit/",{
+    render:  /*async*/ () => {
+        /*const response = await fetch("http://localhost:5000/api/produit/",{
             headers:{
                 "Content-Type":"application/json",
             }
@@ -8,7 +11,8 @@ const accueil = {
         /*if(!response || !response.ok){
             return `<div>Error dans la lecture de la bdd</div>`
         }*/
-        const listeCategories = await response.json(); 
+        /*const listeCategories = await response.json(); */
+        const listeCategories = data.listeCategories
         return `  
     <header>
         <div class="conteneurNew">

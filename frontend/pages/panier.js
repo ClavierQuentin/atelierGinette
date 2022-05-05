@@ -1,3 +1,4 @@
+import data from "../data.js";
 import { getPanierItems, setPanierItems } from "../localStorage.js";
 import { parseRequestUrl, rerender } from "../utils.js";
 
@@ -62,9 +63,15 @@ const panier = {
             })
         })
     },
-    render: async () => {
+    render: /*async*/ () => {
         if(request.id){
-                const response = await fetch(`http://localhost:5000/pages/panier/${request.id}`,{
+            let produit = []
+            for(let i = 0; i < data.listeProduits.length; i++){
+                if(request.id == data.listeProduits[i].id_produit){
+                     produit = data.listeProduits[i];
+                }
+            }
+               /* const response = await fetch(`http://localhost:5000/pages/panier/${request.id}`,{
                     headers:{
                         "Content-Type":"application/json",
                     }
@@ -73,14 +80,14 @@ const panier = {
             if(!response || !response.ok){
                 return `<div>Erreur dans la lecture de la BDD</div>`
             } 
-            let produit = await response.json();
+            let produit = await response.json();*/
         
             ajouterAuPanier({
-                "produit": produit[0].id_produit,
-                "nom": produit[0].nom_produit,
-                "image": produit[0].url_image,
-                "prix": produit[0].prix_produit,  
-                "stock": produit[0].stock_produit,
+                "produit": produit.id_produit,
+                "nom": produit.nom_produit,
+                "image": produit.url_image,
+                "prix": produit.prix_produit,  
+                "stock": produit.stock_produit,
                 "qte":1
             })    
         }   

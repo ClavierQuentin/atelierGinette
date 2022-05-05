@@ -16,7 +16,7 @@ const nav = document.querySelector('nav');
 let request = parseRequestUrl();
 
 function isAccueil(param, param2){
-    if(param != 'pages' ||!param2 ){
+    if(param != 'pages' || !param2 || param2 != "categories" || param2 != "produit" || param2 != "panier"){
         conteneurName.style.position = "absolute";
        fonctionCarrousel();
     }
@@ -49,11 +49,11 @@ const router = async () =>{
        // main.innerHTML = screen.render();
     //}
     //else{
-        main.innerHTML = await screen.render();
+        main.innerHTML = /*await*/ screen.render();
         if (screen.after_render){
-            await screen.after_render()
+            /*await*/ screen.after_render()
         };
-    //}   
+  //  }   
 }
 
 window.addEventListener('load', () =>{

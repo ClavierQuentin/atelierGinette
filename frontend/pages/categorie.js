@@ -1,4 +1,4 @@
-//import {listeCategories} from "../data.js";
+import data from "../data.js";
 /*function generateCards(){
     let mainConteneur = document.getElementById('main-conteneur');
 
@@ -42,8 +42,8 @@
     }
 }*/
 const categories = {
-    render:  async () => {
-        const response = await fetch("http://localhost:5000/api/produit/",{
+    render: /* async*/ () => {
+     /*   const response = await fetch("http://localhost:5000/api/produit/",{
             headers:{
                 "Content-Type":"application/json",
             }
@@ -51,7 +51,8 @@ const categories = {
         if(!response || !response.ok){
             return `<div>Error dans la lecture de la bdd</div>`
         }
-        const listeCategories = await response.json(); 
+        const listeCategories = await response.json(); */
+        const listeCategories = data.listeCategories
          return `
          <div class="sectionProduits backGroundFleur">
             <div class="titreProduits">

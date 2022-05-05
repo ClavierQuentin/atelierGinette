@@ -2,13 +2,14 @@
 import {listeProduits} from "../data.js";*/
 import {parseRequestUrl} from '../utils.js';
 let request = parseRequestUrl();
+import data from '../data.js';
 
 
 
 
 const produits = {
-    render: async  () => {
-        const response = await fetch(`http://localhost:5000/pages/categories/${request.id}`,{
+    render: /*async*/  () => {
+       /* const response = await fetch(`http://localhost:5000/pages/categories/${request.id}`,{
             headers:{
                 "Content-Type":"application/json",
             }
@@ -16,7 +17,13 @@ const produits = {
         if(!response || !response.ok){
             return  `<div>Erreur dans la lecture de la BDD</div>`
         }
-        const produits = await response.json();
+        const produits = await response.json(); */
+        let produits = []
+        for(let i = 0; i < data.listeProduits.length; i++){
+            if(request.id == data.listeProduits[i].id_categorie){
+                produits.push(data.listeProduits[i])
+            }
+        }
   
             return `
             <div class="sectionProduits backGroundFleur">

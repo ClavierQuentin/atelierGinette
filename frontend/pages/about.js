@@ -1,11 +1,14 @@
+import data from "../data.js";
+
 const about = {
-    render:  async () => {
-        const response = await fetch(`localhost:${PORT}/pages/about`,{
+    render: /* async*/ () => {
+       /* const response = await fetch(`localhost:${PORT}/pages/about`,{
             headers:{
                 "Content-Type":"application/json",
             }
         });
-        const listeImages = await response.json();
+        const listeImages = await response.json();*/
+        const listeImages = data.photosPrez
         return `
         <!-----------------BANNIERE QUI JE SUIS--------------------->
         <div class="banniere quiJeSuis backGroundFleur">

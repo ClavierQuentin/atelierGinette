@@ -1,16 +1,20 @@
 //On importe les données de data.js
 //import {photosCarrousel} from "../data.js";
 
+import data from "../data.js";
 
-const fonctionCarrousel = async () => {
 
-    const response = await fetch("http://localhost:5000/api/produit/",{
+const fonctionCarrousel = /*async*/ () => {
+
+   /* const response = await fetch("http://localhost:5000/api/produit/",{
         headers:{
             "Content-Type":"application/json",
         }
     });
     
-    const listeCategories = await response.json();
+    const listeCategories = await response.json(); */
+
+    const listeCategories = data.listeCategories
     
 //On récupère l'élément carrousel dans html
 let carrousel = document.getElementById('carrousel');

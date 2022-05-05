@@ -1,4 +1,4 @@
-module.exports ={
+export default {
  photosCarrousel : [
         {
             photo : "./img/trousse-maquillage-artisanat-atelier-ginette-4.jpg",
