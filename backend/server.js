@@ -4,6 +4,7 @@ const data = require("./data.js")
 const app = express()
 const mysql = require('mysql')
 const { type, json, jsonp } = require('express/lib/response');
+const path = require('path');
 
 
 app.use(cors())
