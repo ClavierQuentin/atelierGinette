@@ -107,7 +107,4 @@ app.get('*', (req, res) => {
     console.log('serveur sur http://localhost:5000');
 })*/
 
-app.listen(process.env.PORT, () => {
-    console.log(PORT);
-    console.log(process.env.PORT);
-});
+app.listen(process.env.PORT)
