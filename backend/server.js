@@ -9,19 +9,19 @@ const { type, json, jsonp } = require('express/lib/response');
 app.use(cors())
 
 //Connexion
-
+/*
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'atelier_ginette'
+    host: '185.98.131.176',
+    user: 'genie1829577_12bkj',
+    password: 'Dwwm2022@1984',
+    database: 'genie1829577_12bkj'
 })
 db.connect((err) =>{
     if(err){
         throw err
     }
     console.log('Connecté à MySql');
-})
+})*/
  
 
 
