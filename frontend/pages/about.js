@@ -1,6 +1,6 @@
 const about = {
     render:  async () => {
-        const response = await fetch("http://localhost:5000/pages/about",{
+        const response = await fetch(`localhost:${PORT}/pages/about`,{
             headers:{
                 "Content-Type":"application/json",
             }
