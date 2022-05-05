@@ -8,7 +8,7 @@ import categories from "./pages/categorie.js";
 import produits from "./pages/produits.js";
 import produit from "./pages/produit.js";
 import panier from "./pages/panier.js";
-import paiement from "./pages/paiement.js";
+/*import paiement from "./pages/paiement.js";*/
 
 const conteneurName = document.getElementById('conteneurName');
 const nav = document.querySelector('nav');
@@ -35,7 +35,7 @@ const routes = {
     '/pages/produit/id': produit,
     '/pages/panier':panier,
     '/pages/panier/id':panier,
-    '/pages/paiement':paiement
+    //'/pages/paiement':paiement
 }
 const router = async () =>{
     request = parseRequestUrl();

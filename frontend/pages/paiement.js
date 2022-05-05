@@ -1,4 +1,4 @@
-const paiement = {
+/*const paiement = {
     after_render: () => {
         var button = document.querySelector('#submit-button');
       
@@ -48,4 +48,4 @@ const paiement = {
         `
     }
 }
-export default paiement
+export default paiement*/
