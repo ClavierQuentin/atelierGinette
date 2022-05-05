@@ -16,14 +16,20 @@ const nav = document.querySelector('nav');
 let request = parseRequestUrl();
 
 function isAccueil(param, param2){
+    if(param2 == 'about'){
+        conteneurName.style.position = "relative";
+        fonctionCarrouselPrez(); 
+        return       
+    } 
+    if(param2 == 'categories' || param2 =="produit" || param2 == "panier"){
+        conteneurName.style.position = "relative";
+        return
+    }
     if(param != 'pages' || !param2 || param2 != "categories" || param2 != "produit" || param2 != "panier"){
         conteneurName.style.position = "absolute";
        fonctionCarrousel();
     }
-    else if(param2 == 'about'){
-        conteneurName.style.position = "relative";
-        fonctionCarrouselPrez();        
-    } 
+    
 }
 
 const routes = {
