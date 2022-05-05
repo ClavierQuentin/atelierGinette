@@ -23,11 +23,11 @@ db.connect((err) =>{
     }
     console.log('Connecté à MySql');
 })
-
+ 
 
 
 app.get("/api/produit/", (req, res) => {
-    let sql = `SELECT * FROM article_Q`
+    let sql = `SELECT * FROM categories`
     let query = db.query(sql, (err, result) => {
         if(err){
             throw err  
@@ -37,7 +37,7 @@ app.get("/api/produit/", (req, res) => {
     })
 });
 app.get("/pages/categories/:id", (req, res) => {
-    let sql = `SELECT * FROM article_Q WHERE id_categorie = ${req.params.id}`;
+    let sql = `SELECT * FROM produits WHERE id_categorie = ${req.params.id}`;
     let query = db.query(sql, (err, result) => {
         if(err){
             throw err
@@ -46,7 +46,7 @@ app.get("/pages/categories/:id", (req, res) => {
     })
 });
 app.get("/pages/produit/:id", (req, res) => {
-    let sql = `SELECT * FROM produits WHERE id_article = ${req.params.id}`
+    let sql = `SELECT * FROM produits WHERE id_produit = ${req.params.id}`
     let query = db.query(sql, (err, result) => {
         if(err){
             throw err
@@ -55,7 +55,7 @@ app.get("/pages/produit/:id", (req, res) => {
     })
 })
 app.get("/pages/panier/:id", (req, res) => {
-    let sql = `SELECT * FROM produits WHERE id_article = ${req.params.id}`
+    let sql = `SELECT * FROM produits WHERE id_produit = ${req.params.id}`
     let query = db.query(sql, (err, result) => {
         if(err){
             throw err
