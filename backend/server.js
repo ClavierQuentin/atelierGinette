@@ -73,6 +73,8 @@ app.get("/pages/about", (req,res) => {
         res.send(article)
     })
 })
-app.listen(5000, () => {
+/*app.listen(5000, () => {
     console.log('serveur sur http://localhost:5000');
-})
+})*/
+
+app.listen(process.env.PORT);
