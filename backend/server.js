@@ -9,12 +9,12 @@ const { type, json, jsonp } = require('express/lib/response');
 app.use(cors())
 
 //Connexion
-/*
+
 const db = mysql.createConnection({
-    host: '185.98.131.176',
-    user: 'genie1829577_12bkj',
-    password: 'Dwwm2022@1984',
-    database: 'genie1829577_12bkj'
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'atelier_ginette'
 })
 db.connect((err) =>{
     if(err){
@@ -22,7 +22,7 @@ db.connect((err) =>{
     }
     console.log('Connecté à MySql');
 })
- */
+ 
 
 
 app.get("/api/produit/", (req, res) => {
