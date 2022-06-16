@@ -1,19 +1,17 @@
 //J'importe les données de data.js
 //import {photosPrez} from "../data.js";
 
-import data from "../data.js";
 
-const fonctionCarrouselPrez = /*async*/ () => {
-/*
-    const response = await fetch("http://localhost:5000/pages/about",{
+const fonctionCarrouselPrez = async () => {
+
+    const response = await fetch("http://localhost:3000/pages/about",{
         headers:{
             "Content-Type":"application/json",
         }
     });
     
     const listeImages = await response.json();
-*/
-    const listeImages = data.photosPrez
+
     let  listeImagesCarrou = [listeImages[8], listeImages[7], listeImages[4], listeImages[6]];
 //On récupère l'élément HTML
 let carrouselPrez = document.getElementById('carrouselPrez');

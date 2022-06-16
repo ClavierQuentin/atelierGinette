@@ -1,15 +1,78 @@
-const express = require('express')
+/*const express = require('express')
 const cors = require('cors')
 const data = require("./data.js")
 const app = express()
 const mysql = require('mysql')
 const { type, json, jsonp } = require('express/lib/response');
 const path = require('path');
-const { request } = require('http')
+const { request } = require('http');*/
 
+const { type } = require('express/lib/response');
+const http = require('http');
+const app = require('./app');
+
+const normalizePort = val => {
+    const port = parseInt(val, 10);
+
+    if(isNaN(port)){
+        return val;
+    }
+    if(port >= 0){
+        return port;
+    }
+    return false;
+};
+
+const port = normalizePort(process.env.PORT || "3000");
+app.set('port', port);
+
+const errorHandler = error => {
+    if(error.syscall !== "listen"){
+        throw error;
+    }
+    const address = server.address();
+    const bind = typeof address === "string" ? "pipe" + address : "port" + port;
+    switch(error.code){
+        case "EACCES": 
+            console.error(bind + "Requires elevated provileges");
+            process.exit(1);
+            break;
+        case "EADDRINUSE":
+            console.error(bind + "is already in use");
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+};
+
+
+const server = http.createServer(app);
+
+server.on('error', errorHandler);
+server.on('listening', () => {
+    const address = server.address();
+    const bind = typeof address === "string" ? "pipe" + address : "port " + port;
+    console.log("Listening on " + bind);
+})
+server.listen(port);
+
+//const  Sequelize = require('sequelize');
 /*
-app.use(cors())
+const sequelize = new Sequelize("genie1829577_12bkj", "genie1829577_12bkj","Dwwm2022@1984",{
+    dialect:"mysql",
+    host: "185.98.131.176"
+})
 
+    try {
+    sequelize.authenticate();
+    console.log('Connecté à la base de données MySQL!');
+    } catch (error) {
+    console.error('Impossible de se connecter, erreur suivante :', error);
+     }*/
+
+/*app.use(cors())*/
+/*
 app.get('/api/produit/', (req,res) => {
     res.send(data.listeCategories);
 })
@@ -33,11 +96,11 @@ app.get("/pages/produit/:id", (req,res) => {
 })
 app.get("/pages/about", (req,res) => {
     res.send(data.photosPrez)
-})
+}) */
 //Connexion
-/*
-const db = mysql.createConnection({
-    host: 'mysql22.lwspanel.com',
+
+/*const db = mysql.createConnection({
+    host: '185.98.131.176',
     user: 'genie1829577_12bkj',
     password: 'Dwwm2022@1984',
     database: 'genie1829577_12bkj'
@@ -47,10 +110,10 @@ db.connect((err) =>{
         throw err
     }
     console.log('Connecté à MySql');
-})
+}) */
  
 
-
+/*
 app.get("/api/produit/", (req, res) => {
     let sql = `SELECT * FROM categories`
     let query = db.query(sql, (err, result) => {
@@ -99,12 +162,12 @@ app.get("/pages/about", (req,res) => {
     })
 })*/
 
-app.use(express.static(path.join(__dirname, '../frontend')));
+/*app.use(express.static(path.join(__dirname, '../frontend')));
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/index.html'));
-  });
+  });*/
 /*app.listen(5000, () => {
     console.log('serveur sur http://localhost:5000');
 })*/
 
-app.listen(process.env.PORT)
+/*app.listen(process.env.PORT)*/

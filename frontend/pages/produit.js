@@ -1,6 +1,6 @@
 import { getPanierItems, setPanierItems } from '../localStorage.js';
 import {parseRequestUrl} from '../utils.js';
-import data from '../data.js'
+//import data from '../data.js'
 let request = parseRequestUrl();
 
 let ajouterAuPanier = (item, forceUpdate = false) => {
@@ -18,35 +18,36 @@ let ajouterAuPanier = (item, forceUpdate = false) => {
 }
 
 const produit = {
-    after_render: /*async */  () => {
+    after_render: async   () => {
        const request = parseRequestUrl();
-       /*  const response = await fetch(`http://localhost:5000/pages/produit/${request.id}`,{
+         const response = await fetch(`http://localhost:3000/pages/produit/${request.id}`,{
             headers:{
                 "Content-Type":"application/json",
             }
         })
-        const produit = await response.json() */
+        const produit = await response.json() 
 
-        let produit = []
+        /*let produit = []
             for(let i = 0; i < data.listeProduits.length; i++){
                 if(request.id == data.listeProduits[i].id_produit){
                      produit = data.listeProduits[i];
                 }
-            }
+            }*/
         document.getElementById('boutonAjouter').addEventListener('click', () => {
+            console.log(produit);
             ajouterAuPanier({
-                "produit": produit.id_produit,
-                "nom": produit.nom_produit,
-                "image": produit.url_image,
-                "prix": produit.prix_produit,  
-                "stock": produit.stock_produit,
+                "produit": produit[0].id_produit,
+                "nom": produit[0].nom_produit,
+                "image": produit[0].url_image,
+                "prix": produit[0].prix_produit,  
+                "stock": produit[0].stock_produit,
                 "qte":1
             })
             location.reload()
         })
     },
-    render:/* async */() => {
-       /* const response = await fetch(`http://localhost:5000/pages/produit/${request.id}`,{
+    render: async () => {
+       const response = await fetch(`http://localhost:3000/pages/produit/${request.id}`,{
             headers:{
                 "Content-Type":"application/json",
             }
@@ -54,39 +55,39 @@ const produit = {
         if(!response || !response.ok){
             return `<div>Erreur dans la lecture de la BDD</div>`
         }
-        const produit = await response.json()*/
-        let produit = []
+        const produit = await response.json()
+        /*let produit = []
             for(let y = 0; y < data.listeProduits.length; y++){
                 if(request.id == data.listeProduits[y].id_produit){
                      produit = data.listeProduits[y];
                 }
-            }
+            }*/
         
         return `
         <div class="backGroundFleur">
             <div class="sectionPhoto">
-                <img src="${produit.url_image}" alt="" class="imgProduitUnique">
+                <img src="${produit[0].url_image}" alt="" class="imgProduitUnique">
                 <div class="description1">
-                    <h3>${produit.nom_produit}</h3>
+                    <h3>${produit[0].nom_produit}</h3>
                     <div class="prix">
                         <p>
-                            ${produit.prix_produit}€
+                            ${produit[0].prix_produit}€
                         </p>
                     </div>
                     <div class="descriptionCourte">
-                            ${produit.description_courte} 
+                            ${produit[0].description_courte} 
                     </div>
                     <div><button id="boutonAjouter">Ajouter au panier</button></div>
                 </div>
             </div>
             <hr>
             <div class="compo">
-                ${produit.description_longue}
+                ${produit[0].description_longue}
             </div>
-            <hr>
+            <!--<hr>
             <div>
                 <h3 class="titreProduitEquivalent">Vous pourriez aussi aimer :</h3>
-            </div>
+            </div>-->
         </div>
        `
     }

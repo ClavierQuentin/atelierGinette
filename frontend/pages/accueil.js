@@ -1,18 +1,29 @@
-import data from "../data.js";
+//import data from "../data.js";
 import { fonctionCarrousel } from "../modules/moduleCarrousel.js";
 
+
 const accueil = {
-    render:  /*async*/ () => {
-        /*const response = await fetch("http://localhost:5000/api/produit/",{
+    render:  async () => {
+            /*let xhr = new XMLHttpRequest();
+            xhr.open("GET","http://localhost:4200/api/produit/", true);
+            xhr.send();
+            xhr.onreadystatechange = function(){ // on modifie l'attribut onreadystatechange de notre requête qui permet d'exécuter du code en fonction du changement d'état de la requête
+            if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){ // Si la requête se termine
+                console.log(xhr.responseText);
+                listeCategories = JSON.parse(xhr.responseText) ;
+                }
+            }
+            console.log(listeCategories);*/
+        const response = await fetch("http://localhost:3000/api/produit/",{
             headers:{
                 "Content-Type":"application/json",
             }
         });
-        /*if(!response || !response.ok){
+        if(!response || !response.ok){
             return `<div>Error dans la lecture de la bdd</div>`
-        }*/
-        /*const listeCategories = await response.json(); */
-        const listeCategories = data.listeCategories
+        }
+        const listeCategories = await response.json(); 
+        //const listeCategories = data.listeCategories
         return `  
     <header>
         <div class="conteneurNew">

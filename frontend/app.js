@@ -27,7 +27,7 @@ function isAccueil(param, param2){
     }
     if(param != 'pages' || !param2 || param2 != "categories" || param2 != "produit" || param2 != "panier"){
         conteneurName.style.position = "absolute";
-       fonctionCarrousel();
+        fonctionCarrousel();
     }
     
 }
@@ -51,15 +51,15 @@ const router = async () =>{
     (request.id ? `/id` : '');
     const screen = routes[parseUrl]? routes[parseUrl] : accueil;
     const main = document.getElementById('main-conteneur');
-   // if(!request.destination || request.destination == 'about'){
-       // main.innerHTML = screen.render();
-    //}
-    //else{
-        main.innerHTML = /*await*/ screen.render();
+    if(!request.destination || request.destination == 'about'){
+        main.innerHTML = await screen.render();
+    }
+    else{
+        main.innerHTML = await screen.render();
         if (screen.after_render){
-            /*await*/ screen.after_render()
+            await screen.after_render()
         };
-  //  }   
+   }   
 }
 
 window.addEventListener('load', () =>{

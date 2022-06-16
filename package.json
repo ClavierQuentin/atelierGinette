@@ -4,7 +4,7 @@
   "description": "",
   "main": "backend/server.js",
   "scripts": {
-    "start": "node backend/server.js",
+    "start": "nodemon backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +21,11 @@
     "braintree": "^3.11.0",
     "cors": "^2.8.5",
     "express": "^4.17.3",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.3.6",
     "mysql": "^2.18.1",
-    "path": "^0.12.7"
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7",
+    "sql": "^0.78.0"
   }
 }
