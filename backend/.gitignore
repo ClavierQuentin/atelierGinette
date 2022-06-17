@@ -1,3 +1,13 @@
 node_modules
 package-lock.json
 
+atelier_ginette.sql
+backup.sql
+.env
+
+server.js
+data.js
+
+app.js
+
+dbinfo.js
