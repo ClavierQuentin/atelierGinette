@@ -6,7 +6,7 @@
 
 const fonctionCarrousel = async () => {
 
-    const response = await fetch("http://localhost:3000/api/produit/",{
+    const response = await fetch("/api/produit/",{
         headers:{
             "Content-Type":"application/json",
         }
