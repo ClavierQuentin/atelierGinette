@@ -1,16 +1,9 @@
-exports.myJAWSDBserver = {
-    url: process.env.JAWSDB_URL,
-    host: process.env.JAWSDB_HOST,
-    port: process.env.JAWSDB_PORT,
-    user: process.env.JAWSDB_USER,
-    password: process.env.JAWSDB_PASSWORD,
-    database: process.env.JAWSDB_DATABASE
-};
 
-exports.mySQLserver = {
-    host: process.env.MYSQL_HOST,
-    port: process.env.MYSQL_PORT,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE
+exports.dbInfo = {
+    host: 'tvcpw8tpu4jvgnnq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    user: 'gcce05r9brilm3jj',
+    password: 'y8pr8u3iyjk597y9',
+    database: 'zlsorffc7qeih1l3',
+    charset  : 'UTF8_UNICODE_CI',
+    multipleStatements: true
 };

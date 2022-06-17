@@ -1,2 +1,9 @@
 node_modules
 package-lock.json
+
+server.js
+data.js
+
+app.js
+
+dbinfo.js

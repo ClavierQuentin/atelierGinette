@@ -3,6 +3,7 @@ const cors = require('cors');
 const mysql = require('mysql');
 const path = require('path');
 const app = express();
+const dbInfo = require('./dbInfo.js');
 
 const PORT = process.env.PORT || 3000;
 
@@ -10,11 +11,12 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 
 app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, '../frontend/index.html')));
 
-const db = mysql.createConnection({
-    host: 'tvcpw8tpu4jvgnnq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-    user: 'gcce05r9brilm3jj',
-    password: 'y8pr8u3iyjk597y9',
-    database: 'zlsorffc7qeih1l3',
+const db = mysql.createConnection(
+    {
+    host: dbInfo.dbInfo.host,
+    user: dbInfo.dbInfo.user,
+    password: dbInfo.dbInfo.password,
+    database: dbInfo.dbInfo.database,
     charset  : 'UTF8_UNICODE_CI',
     multipleStatements: true
 })
