@@ -5,12 +5,16 @@ const mongoose = require('mongoose');
 const Things = require('./models/Things');
 const app = express();
 
+const dbInfo = require('./dbInfo.js');
 const mysql = require('mysql');
+
+
+//const db = mysql.createConnection(process.env.JAWSDB_URL);
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'atelier_ginette',
+    host: 'tvcpw8tpu4jvgnnq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    user: 'gcce05r9brilm3jj',
+    password: 'y8pr8u3iyjk597y9',
+    database: 'zlsorffc7qeih1l3',
     charset  : 'UTF8_UNICODE_CI',
     multipleStatements: true
 })
