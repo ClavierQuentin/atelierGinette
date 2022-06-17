@@ -9,7 +9,7 @@ let request = parseRequestUrl();
 
 const produits = {
     render: async  () => {
-        const response = await fetch(`http://localhost:3000/pages/categories/${request.id}`,{
+        const response = await fetch(`/pages/categories/${request.id}`,{
             headers:{
                 "Content-Type":"application/json",
             }

@@ -2,7 +2,7 @@
 const about = {
     render:  async () => {
 
-        const response = await fetch("http://localhost:3000/pages/about",{
+        const response = await fetch("/pages/about",{
             headers:{
                 "Content-Type":"application/json",
             }

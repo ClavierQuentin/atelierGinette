@@ -71,7 +71,7 @@ const panier = {
                      produit = data.listeProduits[i];
                 }
             }*/
-               const response = await fetch(`http://localhost:3000/pages/panier/${request.id}`,{
+               const response = await fetch(`/pages/panier/${request.id}`,{
                     headers:{
                         "Content-Type":"application/json",
                     }

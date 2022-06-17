@@ -20,7 +20,7 @@ let ajouterAuPanier = (item, forceUpdate = false) => {
 const produit = {
     after_render: async   () => {
        const request = parseRequestUrl();
-         const response = await fetch(`http://localhost:3000/pages/produit/${request.id}`,{
+         const response = await fetch(`/pages/produit/${request.id}`,{
             headers:{
                 "Content-Type":"application/json",
             }
@@ -47,7 +47,7 @@ const produit = {
         })
     },
     render: async () => {
-       const response = await fetch(`http://localhost:3000/pages/produit/${request.id}`,{
+       const response = await fetch(`/pages/produit/${request.id}`,{
             headers:{
                 "Content-Type":"application/json",
             }
